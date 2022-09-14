@@ -40,3 +40,37 @@ if (storageData) {
   inputEmailRef.value = storageData.email;
   messageRef.value = storageData.message;
 }
+
+//---------Інше рішення----------------------------------
+
+// const formRef = document.querySelector('.feedback-form');
+// const inputEmailRef = document.querySelector('.feedback-form input');
+// const textareaRef = document.querySelector('.feedback-form textarea');
+// const LOCALSTORAGE_KEY = 'feedback-from-state';
+
+// formRef.addEventListener('submit', onFormSubmit);
+// textareaRef.addEventListener('input', throttle(onTextareaInput, 500));
+
+// populateTextarea();
+
+// function onFormSubmit(e) {
+//   e.preventDefault(); //зупиняємо перезавантаження сторінки
+//   e.currentTarget.reset(); // очищаємо введені дані користувача з форми
+//   localStorage.removeItem(LOCALSTORAGE_KEY); //очищаємо зі сховища
+// }
+
+// function onTextareaInput(e) {
+//   const objectToSave = {
+//     email: inputEmailRef.value, // отримуємо значення введеного в поле email
+//     message: messageRef.value, // отримуємо значення введеного в textarea
+//   };
+//   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(objectToSave)); //зберігаємо в сховище
+// }
+
+// function populateTextarea() {
+//   const savedMessage = localStorage.getItem(LOCALSTORAGE_KEY);
+
+//   if (savedMessage) {
+//     textareaRef.value = savedMessage; //оновлюємо DOM
+//   }
+// }
